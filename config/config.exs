@@ -7,6 +7,12 @@
 # General application configuration
 use Mix.Config
 
+config :hello, Hello.Repo,
+  database: "hello_repo",
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost"
+
 # Configures the endpoint
 config :hello, HelloWeb.Endpoint,
   url: [host: "localhost"],
@@ -32,6 +38,8 @@ config :hello, :phoenix_swagger,
   }
 
 config :phoenix_swagger, json_library: Jason
+
+config :hello, ecto_repos: [Hello.Repo]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

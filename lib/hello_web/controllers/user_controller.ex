@@ -16,6 +16,8 @@ defmodule HelloWeb.UserController do
   end
 
   def index(conn, %{"messenger" => messenger}) do
+    person = %Friends.Person{}
+    Hello.Repo.insert(person)
     json(conn, %{id: messenger})
   end
 end
